@@ -1,9 +1,10 @@
 
+#get some useful packages
 library(data.table)
 library(dplyr)
 library(plyr)
 
-#Getting the data
+#Get the data
 trainSubj <- read.table('UCI HAR Dataset/train/subject_train.txt')
 testSubj <- read.table('UCI HAR Dataset/test/subject_test.txt')
 trainFeatures <- read.table('UCI HAR Dataset/train/X_train.txt')
@@ -15,20 +16,22 @@ testActivities <- read.table('UCI HAR Dataset/test/Y_test.txt')
 subjects <- rbind(trainSubj,testSubj)
 features <- rbind(trainFeatures, testFeatures)
 activities <- rbind(trainActivities, testActivities)
-#Getting the features 
+
+#Gett the features 
 name_features <- read.table("UCI HAR Dataset/features.txt")
-#get rid of the fist column that we don't need
+
+#get rid of the fist column that we don't need and make the names characters 
 name_features <- name_features[,2]
 name_features <- as.character(name_features)
+
 #make the names more readable by removing parenthesis and useless signs
 name_features <-  gsub("([-])", "_", gsub("([()])", "", name_features))
-#replace comas by '_'
 name_features <- gsub("([,])", "_", name_features)
 
-#binding the columns to build the table
+#bind the columns to build the table
 mydf <- cbind(subjects, activities, features)
 
-#renaming columns
+#rename columns
 colnames(mydf)[1] <- "subject"
 colnames(mydf)[2] <- "activity"
 for (i in 1:561){
@@ -36,10 +39,10 @@ for (i in 1:561){
   colnames(mydf)[(2+i)] <- name_features[i]
 }
 
-#using dplyr library to simplify things
+#use dplyr tables
 df <- tbl_df(mydf)
 
-#replace the activities by their name in data frame
+#replace the activities by their name instead of a number
 activity_labels <- read.table('UCI HAR Dataset/activity_labels.txt')
 labels <- select(activity_labels, V2)
 df <- df %>%  mutate(activity = labels[activity,])
@@ -55,7 +58,7 @@ tidy2 <- tidy1 %>%
 #csv file
 write.csv(tidy2, "tidy2.csv", row.names=FALSE)
 
-#table
+#table of tidy dataset
 write.table(tidy2, 'tidy2.txt', sep="\t", row.names=FALSE)
 
 
