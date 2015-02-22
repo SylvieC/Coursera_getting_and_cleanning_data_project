@@ -17,7 +17,7 @@ subjects <- rbind(trainSubj,testSubj)
 features <- rbind(trainFeatures, testFeatures)
 activities <- rbind(trainActivities, testActivities)
 
-#Gett the features 
+#Get the features 
 name_features <- read.table("UCI HAR Dataset/features.txt")
 
 #get rid of the fist column that we don't need and make the names characters 
