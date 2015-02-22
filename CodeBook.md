@@ -10,15 +10,15 @@ The data for the project came from https://d396qusza40orc.cloudfront.net/getdata
 The features selected for this dataset come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ.These time domain signals (prefix 't' to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz. 
 
 Variables
----------
+=========
 
 subject
-=======
+-------
  
 * Integer from 1 to 30 representing each of the 30 volunteers in the experiment
 
 activity
-========
+--------
 * The activity being performed by the subject, taken out of the six following activities: 
   * walking
   * walking_upstairs
@@ -30,7 +30,7 @@ activity
 
 
 Other variables
-============
+--------------
 The rest of the variables are measuremens that are normalized. They are the average value for the corresponding activity for the subject
 
  
@@ -59,7 +59,6 @@ The rest of the variables are measuremens that are normalized. They are the aver
 |fBodyBodyAccJerkMag_meanFreq |            | frequency domain body acceleration mean frequency|
 |fBodyBodyGyroMag_mean |            | frequency domain body gyroscope magnitude frequency mean|
 |fBodyBodyGyroJerkMag_mean|            | frequency domain body gyroscope magnitude frequency  mean|
-
 |angletBodyAccMean_gravity |            | body angular speed gravity acceleration mean|
 |angletBodyAccJerkMean_gravityMean |            | body angular acceleration jerk magnitude mean|
 |angletBodyGyroMean_gravityMean|            | body angular body gyroscope gravity mean|
