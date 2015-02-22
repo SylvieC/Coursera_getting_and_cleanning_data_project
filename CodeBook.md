@@ -9,14 +9,16 @@ The data for the project came from https://d396qusza40orc.cloudfront.net/getdata
 
 The features selected for this dataset come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ.These time domain signals (prefix 't' to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz. 
 
-** Variables**
+Variables
+---------
 
-1-subject
-  =======
+subject
+=======
+ 
 * Integer from 1 to 30 representing each of the 30 volunteers in the experiment
 
-2-activity
-  ========
+activity
+========
 * The activity being performed by the subject, taken out of the six following activities: 
   * walking
   * walking_upstairs
@@ -27,8 +29,10 @@ The features selected for this dataset come from the accelerometer and gyroscope
 * character
 
 
-Note: the rest of the variables are measurement variables the are normalized. They are the average value for the corresponding activity for the subject
-* normalized value
+Other variables
+============
+The rest of the variables are measuremens that are normalized. They are the average value for the corresponding activity for the subject
+
  
 
 | name of the variable  |   suffix      | Represents the mean of |
