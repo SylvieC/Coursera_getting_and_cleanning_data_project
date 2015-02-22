@@ -33,7 +33,17 @@ Note: the rest of the variables are measurement variables the are normalized. Th
 
 | name of the variable  |   suffix      | Represents the mean of |
 |-----------------------|:-------------:|:-------------------:|
-| tBodyAcc_mean          |             | time domain body acceleration mean|
+|tGravityAcc_mean| _X _Y or _Z       | time domain gravity acceleration in direction X,Y or X (according to suffix added)
+| tBody AccJerk_mean|_X _Y or _Z  | time domain body acceleration jerk in direction X,Y or X (according to suffix added)|
+|tBodyGyro_mean|_X _Y or _Z  | time domain body gyroscope mean in direction X,Y or X (according to suffix added)|
+|tBodyGyroJerk_mean | _X _Y or _Z  | time domain body gyroscope jerk in n direction X,Y or X (according to suffix added)|
+|fBodyAcc_mean| _X _Y or _Z  | frequency domain body acceleration mean in direction X,Y or X (according to suffix added)|
+|fBodyAcc_meanFreq| _X _Y or _Z  | frequency domain body acceleration mean fequency in direction X,Y or X (according to suffix added)|
+|fBodyAccJerk_mean| _X _Y or _Z  | frequency domain body acceleration jerk mean in direction X,Y or X (according to suffix added)|
+|fBodyAccJerk_meanFreq| _X _Y or _Z | frequency domain body acceleration jerk mean in direction X,Y or X (according to suffix added)|
+|fBodyGyro_mean| _X _Y or _Z | frequency domain body gyroscope mean in direction X,Y or X (according to suffix added)|
+|fBodyGyro_meanFreq| _X _Y or _Z   | frequency domain body gyroscope mean frequency in direction X,Y or X (according to suffix added)|
+| tBodyAcc_mean          |           | time domain body acceleration mean|
 |tBodyAccMag_mean|                     | time domain body acceleration magnitude mean|
 |tGravityAccMag_mean       |            | time domain gravity acceleration magnitude mean |           
 |tBodyAccJerkMag_mean|                   | time domain body acceleration jerk magnitude mean|
@@ -45,16 +55,7 @@ Note: the rest of the variables are measurement variables the are normalized. Th
 |fBodyBodyAccJerkMag_meanFreq |            | frequency domain body acceleration mean frequency|
 |fBodyBodyGyroMag_mean |            | frequency domain body gyroscope magnitude frequency mean|
 |fBodyBodyGyroJerkMag_mean|            | frequency domain body gyroscope magnitude frequency  mean|
- |tGravityAcc_mean| _X _Y or _Z       | time domain gravity acceleration in direction X,Y or X (according to suffix added)
-| tBody AccJerk_mean|_X _Y or _Z  | time domain body acceleration jerk in direction X,Y or X (according to suffix added)|
-|tBodyGyro_mean|_X _Y or _Z  | time domain body gyroscope mean in direction X,Y or X (according to suffix added)|
-|tBodyGyroJerk_mean | _X _Y or _Z  | time domain body gyroscope jerk in n direction X,Y or X (according to suffix added)|
- |fBodyAcc_mean| _X _Y or _Z  | frequency domain body acceleration mean in direction X,Y or X (according to suffix added)|
- |fBodyAcc_meanFreq| _X _Y or _Z  | frequency domain body acceleration mean fequency in direction X,Y or X (according to suffix added)|
- |fBodyAccJerk_mean| _X _Y or _Z  | frequency domain body acceleration jerk mean in direction X,Y or X (according to suffix added)|
-|fBodyAccJerk_meanFreq| _X _Y or _Z | frequency domain body acceleration jerk mean in direction X,Y or X (according to suffix added)|
-|fBodyGyro_mean| _X _Y or _Z | frequency domain body gyroscope mean in direction X,Y or X (according to suffix added)|
-|fBodyGyro_meanFreq| _X _Y or _Z   | frequency domain body gyroscope mean frequency in direction X,Y or X (according to suffix added)|
+
 |angletBodyAccMean_gravity |            | body angular speed gravity acceleration mean|
 |angletBodyAccJerkMean_gravityMean |            | body angular acceleration jerk magnitude mean|
 |angletBodyGyroMean_gravityMean|            | body angular body gyroscope gravity mean|
