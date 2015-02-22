@@ -15,17 +15,15 @@ testActivities <- read.table('UCI HAR Dataset/test/Y_test.txt')
 subjects <- rbind(trainSubj,testSubj)
 features <- rbind(trainFeatures, testFeatures)
 activities <- rbind(trainActivities, testActivities)
-
-#Getting the features which are the first 561 columns 
+#Getting the features 
 name_features <- read.table("UCI HAR Dataset/features.txt")
-#get rid of the first column that we don't need
+#get rid of the fist column that we don't need
 name_features <- name_features[,2]
 name_features <- as.character(name_features)
-#make names more readable by removing parenthesis and useless signs
+#make the names more readable by removing parenthesis and useless signs
 name_features <-  gsub("([-])", "_", gsub("([()])", "", name_features))
 #replace comas by '_'
 name_features <- gsub("([,])", "_", name_features)
-
 
 #binding the columns to build the table
 mydf <- cbind(subjects, activities, features)
@@ -38,9 +36,7 @@ for (i in 1:561){
   colnames(mydf)[(2+i)] <- name_features[i]
 }
 
-
 #using dplyr library to simplify things
-library(dplyr)
 df <- tbl_df(mydf)
 
 #replace the activities by their name in data frame
@@ -48,7 +44,7 @@ activity_labels <- read.table('UCI HAR Dataset/activity_labels.txt')
 labels <- select(activity_labels, V2)
 df <- df %>%  mutate(activity = labels[activity,])
 
-#take only columns that contain words 'mean' and 'std'
+#take only columns that contain words 'mean' or 'std' and write csv table
 tidy1 <- df[,c(1,2, grep('mean', names(df), grep('std', names(df))))] 
 write.csv(tidy1, "tidy1.csv", row.names=FALSE)
 
@@ -56,11 +52,11 @@ write.csv(tidy1, "tidy1.csv", row.names=FALSE)
 tidy2 <- tidy1 %>%
            group_by(subject,activity) %>%
              summarise_each(funs(mean))
-
+#csv file
 write.csv(tidy2, "tidy2.csv", row.names=FALSE)
 
-#if we want a table with the column names:
-write.table(tidy2, 'tidy2.txt', row.names=T,col.names=T)
+#table
+write.table(tidy2, 'tidy2.txt', sep="\t", row.names=FALSE)
 
 
 
