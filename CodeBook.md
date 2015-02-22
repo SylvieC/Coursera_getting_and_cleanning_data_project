@@ -35,7 +35,7 @@ The rest of the variables are measuremens that are normalized. They are the aver
 
  
 
-| name of the variable  |   suffix      | Represents the mean of |
+| Name of the variable  |   Suffix  added    | Represents the mean of |
 |-----------------------|:-------------:|:-------------------:|
 |tGravityAcc_mean| _X _Y or _Z       | time domain gravity acceleration in direction X,Y or X (according to suffix added)
 | tBody AccJerk_mean|_X _Y or _Z  | time domain body acceleration jerk in direction X,Y or X (according to suffix added)|
